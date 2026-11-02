@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sanuga Sanmitha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#experience">Work Experience</a></li>
+          <li><a href="#work">Selected Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="talk" href="https://wa.me/85244896714" target="_blank" rel="noopener noreferrer">Let’s Talk <img src="assets/arrow.svg" alt="" /></a>
+    </header>
+
+    <main>
+      <section class="panel hero" id="home">
+        <p class="hello">Hello, it’s me</p>
+        <h1 class="nameplate">
+          <span>Sanuga</span>
+          <span>Sanmitha</span>
+        </h1>
+        <button type="button" class="download-pdf">Download PDF</button>
+      </section>
+
+      <section class="panel exp-page" id="experience" aria-labelledby="exp-title">
+        <div class="exp">
+          <p class="exp-watermark" aria-hidden="true">EXPERIENCE</p>
+          <div class="exp-head">
+            <h2 id="exp-title">/EXPERIENCE</h2>
+            <p>Hong Kong</p>
+          </div>
+          <ul class="exp-list">
+            <li>
+              <div>
+                <strong>AI Literacy Hub</strong>
+                <span>AI Literacy Tutor</span>
+              </div>
+              <time>May 2026 - Now</time>
+            </li>
+            <li>
+              <div>
+                <strong>SIGHT, HKUST</strong>
+                <span>Software Engineer</span>
+              </div>
+              <time>Jul 2026 - Aug 2026</time>
+              <img class="exp-preview" src="assets/haputale.png" alt="" />
+            </li>
+            <li>
+              <div>
+                <strong>UG Hall III</strong>
+                <span>Cluster Coordinator</span>
+              </div>
+              <time>Sep 2025 - Now</time>
+            </li>
+            <li>
+              <div>
+                <strong>HKUST</strong>
+                <span>Language Ambassador</span>
+              </div>
+              <time>Sep 2025 - Dec 2025</time>
+            </li>
+            <li>
+              <div>
+                <strong>Self-employed</strong>
+                <span>Mathematics Tutor</span>
+              </div>
+              <time>Aug 2023 - Dec 2025</time>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel work-panel" id="work" aria-labelledby="work-title">
+        <div class="folio">
+          <p class="folio-watermark" aria-hidden="true">PORTFOLIO</p>
+          <h2 id="work-title">/SELECTED WORK</h2>
+          <div class="folio-bar">
+            <div class="folio-filters" role="tablist" aria-label="Project filters">
+              <button type="button" class="is-on" data-filter="all">All</button>
+              <button type="button" data-filter="real">Real Project</button>
+              <button type="button" data-filter="exploration">Exploration</button>
+            </div>
+            <button type="button" class="folio-all" data-filter="all">View All Work <img src="assets/arrow.svg" alt="" /></button>
+          </div>
+          <div class="folio-grid">
+            <article class="folio-card" data-kind="real">
+              <div class="folio-shot folio-shot-logo">
+                <img src="assets/biotea.png" alt="BioTea logo" />
+              </div>
+              <h3>BioTea</h3>
+              <p>A phone app for community health workers. They record households, screenings, and clinic checks while offline, then the records sync when the phone is back online.</p>
+              <ul>
+                <li>Field App</li>
+                <li>SIGHT</li>
+              </ul>
+              <a class="folio-link" href="https://github.com/sight-hkust/site2026-biotea" target="_blank" rel="noopener noreferrer">View project</a>
+            </article>
+            <article class="folio-card" data-kind="real">
+              <a class="folio-shot" href="https://haputele.sightprojects.app/healthworker/appointments" target="_blank" rel="noopener noreferrer">
+                <img src="assets/haputale.png" alt="Haputale telemedicine sign-in screen" />
+              </a>
+              <h3>Haputale Telemedicine</h3>
+              <p>A sign-in portal for a clinic in Haputale, Sri Lanka. Staff log in to continue a patient visit and speak with a clinician without the patient travelling to the hospital.</p>
+              <a class="folio-link" href="https://haputele.sightprojects.app/healthworker/appointments" target="_blank" rel="noopener noreferrer">haputele.sightprojects.app</a>
+              <ul>
+                <li>Product</li>
+                <li>SIGHT</li>
+              </ul>
+            </article>
+            <article class="folio-card" data-kind="real">
+              <a class="folio-shot folio-shot-fade" href="https://www.ustudy.dev/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/ustudy-live.png" alt="Ustudy homepage: find course notes from university students" />
+              </a>
+              <h3>Ustudy</h3>
+              <p>A website where university students buy and sell class notes. You search by course and semester, see the price, and trade notes with other students.</p>
+              <a class="folio-link" href="https://www.ustudy.dev/" target="_blank" rel="noopener noreferrer">www.ustudy.dev</a>
+              <ul>
+                <li>Web App</li>
+                <li>Real Project</li>
+              </ul>
+            </article>
+          </div>
+          <p class="folio-empty" hidden>No exploration projects yet.</p>
+        </div>
+      </section>
+
+      <section class="panel contact-page" id="contact" aria-labelledby="contact-title">
+        <div class="contact">
+          <p class="contact-watermark" aria-hidden="true">CONTACT</p>
+          <h2 id="contact-title">/CONTACT</h2>
+          <div class="contact-copy">
+            <p>Computer Science student at HKUST. Send an email about internships, projects, or tutoring.</p>
+            <dl>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:ssra@connect.ust.hk">ssra@connect.ust.hk</a></dd>
+              </div>
+              <div>
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/sanuga-sanmitha" target="_blank" rel="noopener noreferrer">sanuga-sanmitha</a></dd>
+              </div>
+              <div>
+                <dt>Based in</dt>
+                <dd>Hong Kong</dd>
+              </div>
+            </dl>
+          </div>
+          <form class="contact-form" action="mailto:ssra@connect.ust.hk" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit">Send message <img src="assets/arrow.svg" alt="" /></button>
+            <p class="contact-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script>
+      (function () {
+        var header = document.querySelector(".header");
+        if (!header) return;
+        var onScroll = function () {
+          header.classList.toggle("is-scrolled", window.scrollY > 8);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      })();
+    </script>
+    <script>
+      (function () {
+        var root = document.querySelector("#work");
+        if (!root) return;
+        var cards = root.querySelectorAll(".folio-card");
+        var empty = root.querySelector(".folio-empty");
+        var buttons = root.querySelectorAll("[data-filter]");
+        function apply(filter) {
+          var shown = 0;
+          cards.forEach(function (card) {
+            var on = filter === "all" || card.getAttribute("data-kind") === filter;
+            card.hidden = !on;
+            if (on) shown += 1;
+          });
+          empty.hidden = shown !== 0;
+          buttons.forEach(function (button) {
+            button.classList.toggle("is-on", button.getAttribute("data-filter") === filter && button.classList.contains("folio-filters") === false && button.parentElement.classList.contains("folio-filters"));
+          });
+          root.querySelectorAll(".folio-filters button").forEach(function (button) {
+            button.classList.toggle("is-on", button.getAttribute("data-filter") === filter);
+          });
+        }
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            apply(button.getAttribute("data-filter"));
+          });
+        });
+      })();
+      (function () {
+        var form = document.querySelector(".contact-form");
+        if (!form) return;
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          var data = new FormData(form);
+          var name = String(data.get("name") || "").trim();
+          var email = String(data.get("email") || "").trim();
+          var message = String(data.get("message") || "").trim();
+          var subject = encodeURIComponent("Portfolio message from " + name);
+          var body = encodeURIComponent(message + "\n\nFrom: " + name + "\nReply to: " + email);
+          window.location.href = "mailto:ssra@connect.ust.hk?subject=" + subject + "&body=" + body;
+          var status = form.querySelector(".contact-status");
+          status.textContent = "Your email app should open a message to ssra@connect.ust.hk.";
+        });
+      })();
+    </script>
+    <script src="js/html2pdf.bundle.min.js"></script>
+    <script>
+      (function () {
+        var button = document.querySelector(".download-pdf");
+        if (!button) return;
+
+        button.addEventListener("click", function () {
+          if (button.disabled) return;
+          if (typeof html2pdf !== "function") {
+            window.print();
+            return;
+          }
+
+          var label = button.textContent;
+          button.disabled = true;
+          button.textContent = "Preparing PDF…";
+
+          var top = window.scrollY;
+          window.scrollTo(0, 0);
+
+          html2pdf()
+            .set({
+              margin: [10, 10, 10, 10],
+              filename: "Sanuga-Sanmitha-Portfolio.pdf",
+              image: { type: "jpeg", quality: 0.95 },
+              pagebreak: {
+                mode: ["css", "legacy"],
+                avoid: [".folio-card", ".exp-list li", ".nameplate", ".contact"]
+              },
+              html2canvas: {
+                scale: 1.5,
+                useCORS: true,
+                backgroundColor: "#ffffff",
+                windowWidth: 1200,
+                scrollX: 0,
+                scrollY: 0,
+                onclone: function (doc) {
+                  doc.documentElement.classList.add("is-pdf");
+                  var cloned = doc.querySelector(".download-pdf");
+                  if (cloned) cloned.remove();
+                }
+              },
+              jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+            })
+            .from(document.body)
+            .save()
+            .then(function () {
+              button.disabled = false;
+              button.textContent = label;
+              window.scrollTo(0, top);
+            })
+            .catch(function () {
+              button.disabled = false;
+              button.textContent = label;
+              window.scrollTo(0, top);
+              window.print();
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
