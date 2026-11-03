@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css?v=pdf1440" />
     <script>
       (function () {
         var root = document.documentElement;
@@ -287,22 +287,95 @@
         var button = document.querySelector(".download-pdf");
         if (!button) return;
 
+        var PDF_WIDTH = 1440;
+
+        function lockLaptopHero(root) {
+          if (!root || !root.querySelector) return;
+          var hero = root.querySelector(".hero");
+          var copy = root.querySelector(".hero-copy");
+          var img = root.querySelector(".hero-portrait");
+          if (hero) {
+            var host = hero.closest(".pdf-block");
+            if (host) host.style.paddingTop = "48px";
+          }
+          if (hero) {
+            hero.style.setProperty("display", "block", "important");
+            hero.style.setProperty("position", "relative", "important");
+            hero.style.setProperty("width", "980px", "important");
+            hero.style.setProperty("height", "488px", "important");
+            hero.style.setProperty("margin", "20px auto 64px", "important");
+            hero.style.setProperty("padding", "80px 48px 0", "important");
+            hero.style.setProperty("overflow", "visible", "important");
+            hero.style.setProperty("background", "#fff", "important");
+          }
+          if (copy) {
+            copy.style.setProperty("position", "relative", "important");
+            copy.style.setProperty("z-index", "2", "important");
+            copy.style.setProperty("width", "524px", "important");
+          }
+          if (img) {
+            img.style.setProperty("position", "absolute", "important");
+            img.style.setProperty("z-index", "3", "important");
+            img.style.setProperty("left", "560px", "important");
+            img.style.setProperty("top", "-143px", "important");
+            img.style.setProperty("right", "auto", "important");
+            img.style.setProperty("width", "443px", "important");
+            img.style.setProperty("height", "716px", "important");
+            img.style.setProperty("max-width", "none", "important");
+            img.style.setProperty("max-height", "none", "important");
+            img.style.setProperty("object-fit", "contain", "important");
+            img.style.setProperty("object-position", "center center", "important");
+          }
+        }
+
         function inlineImages(root) {
-          var images = root.querySelectorAll("img");
-          Array.prototype.forEach.call(images, function (img) {
-            var live = document.querySelector('img[src="' + img.getAttribute("src") + '"]');
-            if (!live || !live.complete || !live.naturalWidth) return;
-            var canvas = document.createElement("canvas");
-            canvas.width = live.naturalWidth;
-            canvas.height = live.naturalHeight;
-            try {
-              canvas.getContext("2d").drawImage(live, 0, 0);
-              img.src = canvas.toDataURL("image/png");
-            } catch (error) {}
-          });
+          var images = Array.prototype.slice.call(root.querySelectorAll("img"));
+          return Promise.all(
+            images.map(function (img) {
+              var src = img.getAttribute("src");
+              if (!src || src.indexOf("data:") === 0) return Promise.resolve();
+              return fetch(new URL(src, document.baseURI).href)
+                .then(function (res) {
+                  return res.blob();
+                })
+                .then(function (blob) {
+                  return new Promise(function (resolve) {
+                    var reader = new FileReader();
+                    reader.onload = function () {
+                      img.src = reader.result;
+                      resolve();
+                    };
+                    reader.onerror = resolve;
+                    reader.readAsDataURL(blob);
+                  });
+                })
+                .catch(function () {});
+            })
+          );
+        }
+
+        function waitImages(root) {
+          var images = Array.prototype.slice.call(root.querySelectorAll("img"));
+          return Promise.all(
+            images.map(function (img) {
+              if (img.complete && img.naturalWidth) {
+                return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+              }
+              return new Promise(function (resolve) {
+                img.onload = function () {
+                  if (img.decode) img.decode().then(resolve, resolve);
+                  else resolve();
+                };
+                img.onerror = resolve;
+              });
+            })
+          );
         }
 
         function loadStyles(doc) {
+          var base = doc.createElement("base");
+          base.href = document.baseURI;
+          doc.head.appendChild(base);
           var links = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'));
           return Promise.all(
             links.map(function (old) {
@@ -325,7 +398,7 @@
           document.body.appendChild(iframe);
           var doc = iframe.contentDocument;
           doc.open();
-          doc.write('<!DOCTYPE html><html><head></head><body style="margin:0;background:#fff"></body></html>');
+          doc.write('<!DOCTYPE html><html><head></head><body style="margin:0;background:#e6e6e6;width:1440px"></body></html>');
           doc.close();
 
           return loadStyles(doc).then(function () {
@@ -347,12 +420,18 @@
                 });
                 var clonedButton = sheet.querySelector(".download-pdf");
                 if (clonedButton) clonedButton.remove();
-                inlineImages(sheet);
+                lockLaptopHero(sheet);
                 doc.body.appendChild(sheet);
-                var fonts = doc.fonts && doc.fonts.ready ? doc.fonts.ready : Promise.resolve();
-                Promise.resolve(fonts).then(function () {
-                  resolve({ iframe: iframe, sheet: sheet });
-                });
+                inlineImages(sheet)
+                  .then(function () {
+                    return waitImages(sheet);
+                  })
+                  .then(function () {
+                    return doc.fonts && doc.fonts.ready ? doc.fonts.ready : Promise.resolve();
+                  })
+                  .then(function () {
+                    resolve({ iframe: iframe, sheet: sheet });
+                  });
               };
               script.src = "js/html2canvas.min.js";
               doc.body.appendChild(script);
@@ -364,11 +443,15 @@
           return win.html2canvas(element, {
             scale: 2,
             useCORS: true,
-            backgroundColor: "#ffffff",
-            windowWidth: 1100,
-            width: 1100,
+            allowTaint: true,
+            backgroundColor: "#e6e6e6",
+            windowWidth: PDF_WIDTH,
+            width: PDF_WIDTH,
             scrollX: 0,
-            scrollY: 0
+            scrollY: 0,
+            onclone: function (clonedDoc) {
+              lockLaptopHero(clonedDoc);
+            }
           });
         }
 
@@ -417,6 +500,8 @@
 
           var label = button.textContent;
           var top = window.scrollY;
+          var zoom = document.documentElement.style.zoom;
+          document.documentElement.style.zoom = "";
           button.disabled = true;
           button.textContent = "Preparing PDF…";
 
@@ -432,6 +517,7 @@
             overlay.remove();
             button.disabled = false;
             button.textContent = label;
+            document.documentElement.style.zoom = zoom;
             window.scrollTo(0, top);
           }
 
