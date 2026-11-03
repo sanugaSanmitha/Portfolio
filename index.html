@@ -7,7 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />  </head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      (function () {
+        var root = document.documentElement;
+        function fit() {
+          var w = window.innerWidth;
+          root.style.zoom = w >= 1200 && w < 1440 ? String(w / 1440) : "";
+        }
+        fit();
+        window.addEventListener("resize", fit);
+      })();
+    </script>
+  </head>
   <body>
     <header class="header">
       <nav aria-label="Primary">
