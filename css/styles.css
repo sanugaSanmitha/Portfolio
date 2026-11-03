@@ -27,7 +27,7 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--paper);
+  background: #e6e6e6;
   color: var(--ink);
   font-family: "SF Pro Text", "SF Pro Display", "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   font-synthesis: none;
@@ -152,27 +152,32 @@ a:focus-visible {
 .hero {
   position: relative;
   z-index: 2;
-  display: block;
-  height: clamp(640px, 60.4vw, 865px);
-  min-height: 640px;
-  margin-top: 0;
-  padding: 0;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.8fr);
+  align-items: center;
+  gap: 16px;
+  width: min(980px, calc(100% - 32px));
+  height: auto;
+  min-height: 0;
+  margin: 20px auto 0;
+  padding: 36px 28px 28px 48px;
+  overflow: visible;
+  border-radius: 12px;
   background: #fff;
 }
 
 .hero-copy {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  left: 8.7%;
-  top: 36.5%;
-  width: min(640px, 52%);
+  left: auto;
+  top: auto;
+  width: auto;
   margin: 0;
   padding: 0;
 }
 
 .hello {
-  margin: 0 0 36px;
+  margin: 0 0 13px;
   color: #222;
   font-size: clamp(36px, 4vw, 48px);
   font-weight: 400;
@@ -181,15 +186,15 @@ a:focus-visible {
 
 .nameplate {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: baseline;
-  gap: 0.22em;
+  gap: 0.64em;
   margin: 0;
   width: auto;
   color: #111;
   font-family: "Archivo Black", Arial Black, "Segoe UI", sans-serif;
-  font-size: clamp(34px, 4.6vw, 64px);
+  font-size: clamp(22px, 2.6vw, 36px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1;
@@ -198,7 +203,7 @@ a:focus-visible {
 }
 
 .hero-role {
-  margin: 22px 0 0;
+  margin: 39px 0 0;
   color: #111827;
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(32px, 3.4vw, 48px);
@@ -207,7 +212,7 @@ a:focus-visible {
 }
 
 .hero-now {
-  margin: 16px 0 0;
+  margin: 2px 0 0;
   color: #9ca3af;
   font-family: "DM Sans", "Segoe UI", sans-serif;
   font-size: 18px;
@@ -223,7 +228,7 @@ a:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 17px;
 }
 
 .hero-actions .download-pdf {
@@ -260,15 +265,20 @@ a:focus-visible {
 }
 
 .hero-portrait {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  left: 56.7%;
-  top: -14.1%;
-  width: 49.2%;
-  height: 134.6%;
+  left: auto;
+  top: auto;
+  justify-self: end;
+  align-self: center;
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  max-height: none;
   margin: 0;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center center;
   pointer-events: none;
 }
 
@@ -318,8 +328,7 @@ a:focus-visible {
 
 .work-panel,
 .plain {
-  min-height: calc(100vh - var(--header-h));
-  padding: 48px 24px 72px;
+  padding: 40px 24px 48px;
 }
 
 .work-panel {
@@ -330,7 +339,7 @@ a:focus-visible {
   position: relative;
   width: min(1080px, 100%);
   margin: 0 auto;
-  padding: 54px 48px 36px;
+  padding: 40px 40px 32px;
   border-radius: 8px;
   background: #fff;
   overflow: hidden;
@@ -353,7 +362,7 @@ a:focus-visible {
 
 .folio h2 {
   position: relative;
-  margin: 18px 0 36px;
+  margin: 12px 0 24px;
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -366,7 +375,7 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .folio-filters {
@@ -482,13 +491,12 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(20px, 5%, 36px);
+  background: #fff;
 }
 
 .folio-shot-logo img {
-  width: clamp(112px, 42%, 168px);
+  width: clamp(72px, 26%, 112px);
   height: auto;
-  max-height: 58%;
   object-fit: contain;
 }
 
@@ -542,8 +550,7 @@ a:focus-visible {
 }
 
 .contact-page {
-  min-height: calc(100vh - var(--header-h));
-  padding: 72px 24px;
+  padding: 40px 24px 56px;
   background:
     radial-gradient(circle at 80% 0%, #ffffff, transparent 32%),
     linear-gradient(180deg, #f3f3f3, #e7e7e7);
@@ -557,7 +564,7 @@ a:focus-visible {
   align-items: start;
   width: min(980px, 100%);
   margin: 0 auto;
-  padding: 72px 48px 48px;
+  padding: 56px 40px 40px;
   overflow: hidden;
   border-radius: 28px;
   background: #fff;
@@ -837,11 +844,9 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 90px);
-  padding: 48px 24px 72px;
-  background:
-    radial-gradient(circle at 20% 0%, #ffffff, transparent 36%),
-    linear-gradient(180deg, #d7d7d7, #ececec);
+  min-height: 0;
+  padding: 16px 24px 48px;
+  background: #e6e6e6;
 }
 
 .exp {
@@ -876,13 +881,13 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: end;
-  margin: 28px 0 28px;
+  margin: 28px 0 0;
 }
 
 .exp-head h1,
 .exp-head h2 {
   grid-column: 2;
-  margin: 0;
+  margin: 0 0 28px;
   text-align: center;
   font-size: clamp(32px, 4vw, 42px);
   font-weight: 700;
@@ -892,6 +897,8 @@ a:focus-visible {
 
 .exp-head p {
   grid-column: 3;
+  justify-self: end;
+  width: 180px;
   margin: 0 0 4px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
@@ -912,8 +919,8 @@ a:focus-visible {
   grid-template-columns: minmax(0, 1fr) 180px;
   align-items: center;
   column-gap: 24px;
-  min-height: 92px;
-  padding: 16px 0;
+  min-height: 76px;
+  padding: 14px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
@@ -948,15 +955,17 @@ a:focus-visible {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  min-height: 65px;
+  min-height: 44px;
   padding: 0 0 4px;
 }
 
 .exp-group p {
+  width: 180px;
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
   font-weight: 500;
+  text-align: right;
 }
 
 .exp-preview {
@@ -985,8 +994,8 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 16px 16px 18px;
+    gap: 2px;
+    padding: 16px 16px 10px;
   }
 
   .nav,
@@ -999,7 +1008,7 @@ a:focus-visible {
   .nav {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px 18px;
+    gap: 4px 7px;
   }
 
   .display {
@@ -1007,9 +1016,12 @@ a:focus-visible {
   }
 
   .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
     height: auto;
     min-height: 0;
-    padding: 36px 20px 24px;
+    padding: 28px 23px 0;
+    overflow: hidden;
   }
 
   .hero-copy {
@@ -1019,14 +1031,53 @@ a:focus-visible {
     width: auto;
   }
 
+  .hello {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: -0.045em;
+  }
+
+  .nameplate {
+    flex-wrap: wrap;
+    gap: 4px 5px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .hero-role {
+    margin-top: 21px;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-now {
+    margin-top: 9px;
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 13px;
+  }
+
+  .hero-actions .download-pdf,
+  .hero-actions .hero-contact {
+    height: 33px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
   .hero-portrait {
     position: relative;
     left: auto;
     top: auto;
-    display: block;
-    width: min(320px, 78vw);
-    height: 420px;
-    margin: 24px auto 0;
+    justify-self: center;
+    width: auto;
+    height: 467px;
+    max-height: none;
+    margin: -101px auto -99px;
   }
 
   .folio {
@@ -1057,10 +1108,19 @@ a:focus-visible {
     padding: 28px 20px 8px;
   }
 
+  .exp-watermark {
+    top: 9px;
+    left: 0;
+    right: 0;
+    font-size: 40px;
+    text-align: center;
+  }
+
   .exp-head {
     grid-template-columns: 1fr;
     justify-items: center;
     row-gap: 10px;
+    margin-top: 0;
   }
 
   .exp-head h1,
@@ -1069,12 +1129,75 @@ a:focus-visible {
     grid-column: 1;
   }
 
+  .exp-head h1,
+  .exp-head h2 {
+    margin-bottom: 0;
+    font-size: 25px;
+    line-height: 32px;
+  }
+
   .exp-head p {
     justify-self: end;
   }
 
   .exp-list li {
     grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .exp-list strong {
+    font-size: 16px;
+  }
+
+  .folio,
+  .contact {
+    padding-top: 29px;
+  }
+
+  .folio-watermark,
+  .contact-watermark {
+    top: 9px;
+    font-size: 40px;
+  }
+
+  .folio h2,
+  .contact h2 {
+    margin-top: 0;
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .folio-card {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  }
+
+  .folio-card h3 {
+    margin: 14px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 25px;
+  }
+
+  .folio-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 21.75px;
+    text-align: left;
+  }
+
+  .folio-link {
+    margin: 0 0 8px;
+    font-size: 12px;
+  }
+
+  .folio-card li {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .exp-list span,
+  .exp-list time {
+    font-size: 12px;
   }
 }
 
@@ -1169,6 +1292,18 @@ a:focus-visible {
   margin: 8px 0 0;
 }
 
+.pdf-sheet .hero {
+  overflow: visible;
+}
+
+.pdf-sheet .hero-portrait {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  max-height: 620px;
+}
+
 .pdf-sheet .nameplate {
   flex-wrap: nowrap;
   font-size: 64px;
@@ -1224,6 +1359,18 @@ a:focus-visible {
     min-height: 0;
   }
 
+  .hero {
+    overflow: visible;
+  }
+
+  .hero-portrait {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-height: 620px;
+  }
+
   .exp,
   .folio,
   .contact {
@@ -1246,4 +1393,121 @@ a:focus-visible {
 @page {
   size: A4;
   margin: 12mm;
+}
+
+@media (min-width: 1100px) {
+  body {
+    background: #e6e6e6;
+  }
+
+  .hero {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 980px;
+    height: 488px;
+    min-height: 0;
+    margin: 20px auto 0;
+    padding: 80px 48px 0;
+    border-radius: 12px;
+    background: #fff;
+    overflow: visible;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    width: 524px;
+    padding: 0;
+  }
+
+  .hello {
+    margin: 0;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.96px;
+  }
+
+  .nameplate {
+    flex-wrap: nowrap;
+    margin: 13px 0 0;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.36px;
+  }
+
+  .hero-role {
+    margin: 39px 0 0;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 0.96px;
+  }
+
+  .hero-now {
+    margin: 2px 0 0;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .hero-actions {
+    margin-top: 17px;
+    gap: 16px;
+  }
+
+  .hero-portrait {
+    position: absolute;
+    left: 560px;
+    top: -143px;
+    width: 443px;
+    height: 716px;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .exp-head h2,
+  .folio h2,
+  .contact h2 {
+    font-size: 50px;
+  }
+
+  .exp-head h2 {
+    line-height: 42px;
+  }
+
+  .folio h2 {
+    line-height: 53px;
+  }
+
+  .exp-page {
+    padding: 34px 24px 29px;
+  }
+
+  .work-panel {
+    padding: 21px 24px 62px;
+  }
+
+  .contact-page {
+    padding: 40px 24px 56px;
+  }
+
+  .contact {
+    padding-bottom: 16px;
+  }
+
+  .exp-page,
+  .work-panel,
+  .contact-page {
+    min-height: 0;
+    background: #e6e6e6;
+  }
+
+  .exp,
+  .contact {
+    width: 980px;
+  }
+
+  .folio {
+    width: 1080px;
+  }
 }
