@@ -6,9 +6,8 @@
     <title>Sanuga Sanmitha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />  </head>
   <body>
     <header class="header">
       <nav aria-label="Primary">
@@ -24,12 +23,20 @@
 
     <main>
       <section class="panel hero" id="home">
-        <p class="hello">Hello, it’s me</p>
-        <h1 class="nameplate">
-          <span>Sanuga</span>
-          <span>Sanmitha</span>
-        </h1>
-        <button type="button" class="download-pdf">Download PDF</button>
+        <div class="hero-copy">
+          <p class="hello">Hello, it’s me</p>
+          <h1 class="nameplate">
+            <span>Sanuga</span>
+            <span>Sanmitha</span>
+          </h1>
+          <p class="hero-role">Software Engineer</p>
+          <p class="hero-now">Currently working for <strong>HKUST AI Literacy Hub</strong></p>
+          <div class="hero-actions">
+            <button type="button" class="download-pdf">Download PDF</button>
+            <a class="hero-contact" href="assets/Sanuga-Sanmitha-Resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+        <img class="hero-portrait" src="assets/hero-photo.png" alt="Portrait of Sanuga Sanmitha" />
       </section>
 
       <section class="panel exp-page" id="experience" aria-labelledby="exp-title">
@@ -46,6 +53,7 @@
                 <span>AI Literacy Tutor</span>
               </div>
               <time>May 2026 - Now</time>
+              <img class="exp-preview" src="assets/ai-literacy-hub.jpg" alt="" />
             </li>
             <li>
               <div>
@@ -53,7 +61,7 @@
                 <span>Software Engineer</span>
               </div>
               <time>Jul 2026 - Aug 2026</time>
-              <img class="exp-preview" src="assets/haputale.png" alt="" />
+              <img class="exp-preview" src="assets/haputale-card.png" alt="" />
             </li>
             <li>
               <div>
@@ -68,6 +76,9 @@
                 <span>Language Ambassador</span>
               </div>
               <time>Sep 2025 - Dec 2025</time>
+            </li>
+            <li class="exp-group">
+              <p>Sri Lanka</p>
             </li>
             <li>
               <div>
@@ -94,20 +105,32 @@
           </div>
           <div class="folio-grid">
             <article class="folio-card" data-kind="real">
+              <a class="folio-shot" href="https://ailh.ust.hk/blog" target="_blank" rel="noopener noreferrer">
+                <img src="assets/ai-literacy-hub.jpg" alt="AI Literacy Hub blog author research workspace" />
+              </a>
+              <h3>AI Literacy Hub</h3>
+              <p>Blog posts that turn AI research and tools into clear writing for learners — literature synthesis, paper summaries, and practical guides on using AI thoughtfully.</p>
+              <a class="folio-link" href="https://ailh.ust.hk/blog" target="_blank" rel="noopener noreferrer">ailh.ust.hk/blog</a>
+              <ul>
+                <li>Writing</li>
+                <li>AI Literacy</li>
+              </ul>
+            </article>
+            <article class="folio-card" data-kind="real">
               <div class="folio-shot folio-shot-logo">
                 <img src="assets/biotea.png" alt="BioTea logo" />
               </div>
               <h3>BioTea</h3>
               <p>A phone app for community health workers. They record households, screenings, and clinic checks while offline, then the records sync when the phone is back online.</p>
+              <a class="folio-link" href="https://github.com/sight-hkust/site2026-biotea" target="_blank" rel="noopener noreferrer">View project</a>
               <ul>
                 <li>Field App</li>
                 <li>SIGHT</li>
               </ul>
-              <a class="folio-link" href="https://github.com/sight-hkust/site2026-biotea" target="_blank" rel="noopener noreferrer">View project</a>
             </article>
             <article class="folio-card" data-kind="real">
               <a class="folio-shot" href="https://haputele.sightprojects.app/healthworker/appointments" target="_blank" rel="noopener noreferrer">
-                <img src="assets/haputale.png" alt="Haputale telemedicine sign-in screen" />
+                <img src="assets/haputale-card.png" alt="Haputale telemedicine sign-in screen" />
               </a>
               <h3>Haputale Telemedicine</h3>
               <p>A sign-in portal for a clinic in Haputale, Sri Lanka. Staff log in to continue a patient visit and speak with a clinician without the patient travelling to the hospital.</p>
@@ -142,16 +165,31 @@
             <p>Computer Science student at HKUST. Send an email about internships, projects, or tutoring.</p>
             <dl>
               <div>
-                <dt>Email</dt>
-                <dd><a href="mailto:ssra@connect.ust.hk">ssra@connect.ust.hk</a></dd>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                </span>
+                <div>
+                  <dt>Email</dt>
+                  <dd><a href="mailto:ssra@connect.ust.hk">ssra@connect.ust.hk</a></dd>
+                </div>
               </div>
               <div>
-                <dt>LinkedIn</dt>
-                <dd><a href="https://www.linkedin.com/in/sanuga-sanmitha" target="_blank" rel="noopener noreferrer">sanuga-sanmitha</a></dd>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 9H4V20h2.5V9ZM5.2 4C4.3 4 3.6 4.7 3.6 5.6s.7 1.6 1.6 1.6 1.6-.7 1.6-1.6S6.1 4 5.2 4ZM20 20h-2.5v-5.6c0-1.6-.6-2.6-2-2.6-1 0-1.6.7-1.9 1.4-.1.2-.1.6-.1.9V20H11V9h2.4v1.5c.4-.7 1.3-1.8 3.2-1.8 2.3 0 4 1.5 4 4.8V20Z"/></svg>
+                </span>
+                <div>
+                  <dt>LinkedIn</dt>
+                  <dd><a href="https://www.linkedin.com/in/sanuga-sanmitha" target="_blank" rel="noopener noreferrer">sanuga-sanmitha</a></dd>
+                </div>
               </div>
               <div>
-                <dt>Based in</dt>
-                <dd>Hong Kong</dd>
+                <span class="contact-icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5a7 7 0 0 0-7 7c0 5.2 7 12 7 12s7-6.8 7-12a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+                </span>
+                <div>
+                  <dt>Based in</dt>
+                  <dd>Hong Kong</dd>
+                </div>
               </div>
             </dl>
           </div>
@@ -230,63 +268,189 @@
         });
       })();
     </script>
-    <script src="js/html2pdf.bundle.min.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/jspdf.umd.min.js"></script>
     <script>
       (function () {
         var button = document.querySelector(".download-pdf");
         if (!button) return;
 
+        function inlineImages(root) {
+          var images = root.querySelectorAll("img");
+          Array.prototype.forEach.call(images, function (img) {
+            var live = document.querySelector('img[src="' + img.getAttribute("src") + '"]');
+            if (!live || !live.complete || !live.naturalWidth) return;
+            var canvas = document.createElement("canvas");
+            canvas.width = live.naturalWidth;
+            canvas.height = live.naturalHeight;
+            try {
+              canvas.getContext("2d").drawImage(live, 0, 0);
+              img.src = canvas.toDataURL("image/png");
+            } catch (error) {}
+          });
+        }
+
+        function loadStyles(doc) {
+          var links = Array.prototype.slice.call(document.querySelectorAll('link[rel="stylesheet"]'));
+          return Promise.all(
+            links.map(function (old) {
+              return new Promise(function (resolve) {
+                var link = doc.createElement("link");
+                link.rel = "stylesheet";
+                link.href = old.href;
+                link.onload = resolve;
+                link.onerror = resolve;
+                doc.head.appendChild(link);
+              });
+            })
+          );
+        }
+
+        function buildSheet() {
+          var iframe = document.createElement("iframe");
+          iframe.className = "pdf-frame";
+          iframe.setAttribute("aria-hidden", "true");
+          document.body.appendChild(iframe);
+          var doc = iframe.contentDocument;
+          doc.open();
+          doc.write('<!DOCTYPE html><html><head></head><body style="margin:0;background:#fff"></body></html>');
+          doc.close();
+
+          return loadStyles(doc).then(function () {
+            return new Promise(function (resolve) {
+              var script = doc.createElement("script");
+              script.onload = function () {
+                var sheet = doc.createElement("div");
+                sheet.className = "pdf-sheet";
+                var top = doc.createElement("div");
+                top.className = "pdf-block";
+                top.appendChild(document.querySelector(".header").cloneNode(true));
+                top.appendChild(document.querySelector("#home").cloneNode(true));
+                sheet.appendChild(top);
+                ["#experience", "#work", "#contact"].forEach(function (selector) {
+                  var block = doc.createElement("div");
+                  block.className = "pdf-block";
+                  block.appendChild(document.querySelector(selector).cloneNode(true));
+                  sheet.appendChild(block);
+                });
+                var clonedButton = sheet.querySelector(".download-pdf");
+                if (clonedButton) clonedButton.remove();
+                inlineImages(sheet);
+                doc.body.appendChild(sheet);
+                var fonts = doc.fonts && doc.fonts.ready ? doc.fonts.ready : Promise.resolve();
+                Promise.resolve(fonts).then(function () {
+                  resolve({ iframe: iframe, sheet: sheet });
+                });
+              };
+              script.src = "js/html2canvas.min.js";
+              doc.body.appendChild(script);
+            });
+          });
+        }
+
+        function capture(win, element) {
+          return win.html2canvas(element, {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#ffffff",
+            windowWidth: 1100,
+            width: 1100,
+            scrollX: 0,
+            scrollY: 0
+          });
+        }
+
+        function addCanvas(pdf, canvas, y, margin, contentW, pageH) {
+          var pageBottom = pageH - margin;
+          var drawH = (contentW * canvas.height) / canvas.width;
+          if (drawH <= pageBottom - margin) {
+            if (y > margin && y + drawH > pageBottom) {
+              pdf.addPage();
+              y = margin;
+            }
+            pdf.addImage(canvas.toDataURL("image/jpeg", 0.92), "JPEG", margin, y, contentW, drawH);
+            return y + drawH;
+          }
+
+          var slicePx = Math.floor((canvas.width * (pageBottom - margin)) / contentW);
+          var offset = 0;
+          while (offset < canvas.height) {
+            var sliceH = Math.min(slicePx, canvas.height - offset);
+            var slice = document.createElement("canvas");
+            slice.width = canvas.width;
+            slice.height = sliceH;
+            slice.getContext("2d").drawImage(canvas, 0, offset, canvas.width, sliceH, 0, 0, canvas.width, sliceH);
+            var h = (contentW * sliceH) / canvas.width;
+            if (y > margin && y + h > pageBottom) {
+              pdf.addPage();
+              y = margin;
+            }
+            pdf.addImage(slice.toDataURL("image/jpeg", 0.92), "JPEG", margin, y, contentW, h);
+            y += h;
+            offset += sliceH;
+            if (offset < canvas.height) {
+              pdf.addPage();
+              y = margin;
+            }
+          }
+          return y;
+        }
+
         button.addEventListener("click", function () {
           if (button.disabled) return;
-          if (typeof html2pdf !== "function") {
+          if (!window.html2canvas || !window.jspdf) {
             window.print();
             return;
           }
 
           var label = button.textContent;
+          var top = window.scrollY;
           button.disabled = true;
           button.textContent = "Preparing PDF…";
 
-          var top = window.scrollY;
-          window.scrollTo(0, 0);
+          var overlay = document.createElement("div");
+          overlay.className = "pdf-overlay";
+          overlay.textContent = "Preparing your PDF…";
+          document.body.appendChild(overlay);
 
-          html2pdf()
-            .set({
-              margin: [10, 10, 10, 10],
-              filename: "Sanuga-Sanmitha-Portfolio.pdf",
-              image: { type: "jpeg", quality: 0.95 },
-              pagebreak: {
-                mode: ["css", "legacy"],
-                avoid: [".folio-card", ".exp-list li", ".nameplate", ".contact"]
-              },
-              html2canvas: {
-                scale: 1.5,
-                useCORS: true,
-                backgroundColor: "#ffffff",
-                windowWidth: 1200,
-                scrollX: 0,
-                scrollY: 0,
-                onclone: function (doc) {
-                  doc.documentElement.classList.add("is-pdf");
-                  var cloned = doc.querySelector(".download-pdf");
-                  if (cloned) cloned.remove();
-                }
-              },
-              jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+          var frame = null;
+
+          function finish() {
+            if (frame) frame.remove();
+            overlay.remove();
+            button.disabled = false;
+            button.textContent = label;
+            window.scrollTo(0, top);
+          }
+
+          buildSheet()
+            .then(function (built) {
+              frame = built.iframe;
+              var win = built.iframe.contentWindow;
+              var blocks = Array.prototype.slice.call(built.sheet.querySelectorAll(".pdf-block"));
+              return blocks.reduce(function (chain, block) {
+                return chain.then(function (list) {
+                  return capture(win, block).then(function (canvas) {
+                    list.push(canvas);
+                    return list;
+                  });
+                });
+              }, Promise.resolve([]));
             })
-            .from(document.body)
-            .save()
-            .then(function () {
-              button.disabled = false;
-              button.textContent = label;
-              window.scrollTo(0, top);
+            .then(function (canvases) {
+              var pdf = new window.jspdf.jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+              var margin = 12;
+              var pageW = pdf.internal.pageSize.getWidth();
+              var pageH = pdf.internal.pageSize.getHeight();
+              var contentW = pageW - margin * 2;
+              var y = margin;
+              canvases.forEach(function (canvas) {
+                y = addCanvas(pdf, canvas, y, margin, contentW, pageH);
+              });
+              pdf.save("Sanuga-Sanmitha-Portfolio.pdf");
             })
-            .catch(function () {
-              button.disabled = false;
-              button.textContent = label;
-              window.scrollTo(0, top);
-              window.print();
-            });
+            .then(finish)
+            .catch(finish);
         });
       })();
     </script>
